@@ -1,0 +1,8 @@
+{% extends 'index.html'%}
+{% load static %}
+{% block content %}
+<div style="width: 500px; margin: 50px auto; text-align: center;">
+    <h1>Start New Application</h1>
+    <button  class="btn btn-outline-success"><a href="{% url 'bankapp:apply' %}">Apply Now</a></button>
+</div>
+{% endblock %}

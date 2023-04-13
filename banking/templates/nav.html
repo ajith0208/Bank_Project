@@ -1,0 +1,23 @@
+<div class="columns large-12">
+    <nav>
+      <section>
+        <ul class="sf-menu large-12">
+          <li class="active"><a href="{% url 'bankapp:home' %}">Home</a></li>
+          <li class="has-dropdown"><a href="#">Branches</a>
+            <ul class="dropdown">
+              {% for dist in links %}
+              <li><a href="https://en.wikipedia.org/wiki/{{ dist.name }}">{{ dist.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'bankapp:apply' %}">Apply Now</a></li>
+          {% else %}
+          <li><a href="{% url 'bankapp:login' %}">Login</a></li>
+          <li><a href="{% url 'bankapp:register' %}">Register</a></li>
+          {% endif %}
+          
+        </ul>
+      </section>
+    </nav>
+</div>
